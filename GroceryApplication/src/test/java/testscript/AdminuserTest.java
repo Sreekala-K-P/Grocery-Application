@@ -54,20 +54,17 @@ public class AdminuserTest extends Base{
 		String passwordvalue=ExcelUtilities.getStringData(0, 1, "LoginPage");
 		
 		LoginPage login=new LoginPage(driver);
-		login.enterUserName(usernamevalue);
-		login.enterPassword(passwordvalue);
-		login.clickSignin();
+		login.enterUserName(usernamevalue).enterPassword(passwordvalue);
+		logout=login.clickSignin();
 		
-		HomePage logout=new HomePage(driver);
+		//HomePage logout=new HomePage(driver);
 		logout.clickAdminUsers();
 		
-		AdminuserPage admin=new AdminuserPage(driver);
-		admin.searchButton();
+		//AdminuserPage admin=new AdminuserPage(driver);
+		//admin.searchButton();
 		
 		String searchuser=ExcelUtilities.getStringData(0, 0, "SearchAdminUser");
-		admin.searchUserName(searchuser);
-		admin.searchTypeDropdown();
-		admin.searchSubmit();
+		admin.searchButton().searchUserName(searchuser).searchTypeDropdown().searchSubmit();
 		
 		//assertEquals
 		boolean actual=admin.searchAlertDisplay();

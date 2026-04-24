@@ -73,21 +73,23 @@ public class AdminuserPage {
 		search.click();
 		return this;
 	}
-	public void searchUserName(String searchuser)
+	public AdminuserPage searchUserName(String searchuser)
 	{
 		searchusername.sendKeys(searchuser);
 		//searchusername.getText();
+		return this;
 	}
-	public void searchTypeDropdown()
+	public AdminuserPage searchTypeDropdown()
 	{
 		page.selectDragDropWithVisibleText(searchusertype, "Admin");
-		
+		return this;
 		//Select select=new Select(searchusertype);
 		//select.selectByVisibleText("Admin");
 	}
-	public void searchSubmit()
+	public AdminuserPage searchSubmit()
 	{
 		searchsubmit.click();
+		return this;
 	}
 	public boolean searchAlertDisplay()
 	{
